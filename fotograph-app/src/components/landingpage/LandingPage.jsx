@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ShowCase from './ShowCase'
-import PopularPosts from './PopularPosts';
+import PhotographersOfTheWeek from './PhotographersOfTheWeek';
 import RecentPosts from './RecentPosts';
 
 class LandingPage extends Component {
@@ -8,7 +8,7 @@ class LandingPage extends Component {
 		return (
 			<div className="landing-page-wrapper">
 				<ShowCase />
-				<PopularPosts />
+				<PhotographersOfTheWeek />
 				<RecentPosts />
 			</div>
 		);
