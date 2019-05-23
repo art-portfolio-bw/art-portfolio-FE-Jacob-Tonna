@@ -1,8 +1,32 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import loginImage from '../../assets/login.jfif'
+import formImage from '../../assets/login.jfif';
 
 class LogIn extends Component {
+
+	state = {
+		userInfo: {
+			email: '',
+			password: '',
+		}
+	}
+
+	changeHandler = e =>{
+		this.setState({
+			userInfo :{
+				// spread operator below
+				...this.setState.userInfo,
+				[e.target.name] : e.target.value
+			}
+		})
+	}
+	
+	login = e => {
+		e.preventDefault();
+		this.props.login(this.state.userInfo).then(()=> {
+			this.props.history.push('/user')
+		})
+		}
 
 	render() { 
 		return (
@@ -10,11 +34,11 @@ class LogIn extends Component {
 				<div className="form-container">
 					<h3>Welcome Back!</h3>
 					<h1> Login </h1>
-					<form>
-						<p>Username</p>
-						<input type="text"/>
+					<form className='login-form' onSubmit={this.login}>
+						<p>Email</p>
+						<input type="email" name='email' placeholder='BestPhotographerEver' onChange={this.changeHandler} value={this.state.userInfo.email} />
 						<p>Password</p>
-						<input type="text"/>
+						<input type="password" name='password' placeholder='bugMeNot' onChange={this.changeHandler} value={this.state.userInfo.password} />
 						<div className="form-buttons">
 							<button> SIGN UP </button>
 							<button> LOGIN </button>
@@ -26,11 +50,16 @@ class LogIn extends Component {
 					</form>
 				</div>
 				<div className="form-image">
-					<img src={loginImage} alt="Login"/>
+					<img src={formImage} alt="Login"/>
 				</div>
 			</div>
 		);
 	}
 }
  
-export default LogIn;
+const mapStateToProps = state => ({
+	logginIn: state.LogginIn,
+	error: state.loginError,
+})
+
+export default connect(mapStateToProps, { logIn })(LogIn);
