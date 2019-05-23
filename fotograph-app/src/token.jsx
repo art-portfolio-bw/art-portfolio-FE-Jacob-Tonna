@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const token = () => {
-  const token = localStorage.getItem("tokrn");
+  const token = localStorage.getItem("token");
   return axios.create({
     headers: {
       'Content-Type': 'application/json',
@@ -9,3 +9,5 @@ export const token = () => {
     }
   });
 };
+
+export default token;
