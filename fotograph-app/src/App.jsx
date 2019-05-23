@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 
 import NavagationBar from './components/nav/NavagationBar';
+import LandingPage from './components/landingpage/LandingPage';
 import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn'
 
@@ -9,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <NavagationBar />
-
-      <Route path ='/SignUp' component={SignUp} />
-      <Route path ='/LogIn' component={LogIn} />
+        <Route exact path ='/' component={LandingPage} />
+        <Route path ='/SignUp' component={SignUp} />
+        <Route path ='/LogIn' component={LogIn} />
 
     </div>
   );
