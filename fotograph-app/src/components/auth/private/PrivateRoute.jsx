@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'reacr-router-dom';
 
 class PrivateRoute extends Component {
 	render() { 
