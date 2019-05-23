@@ -1,17 +1,18 @@
 import React from 'react';
-import Nav from './components/nav/NavagationBar';
-import LandingPage from './components/landingpage/LandingPage'
-import LogIn from './components/auth/LogIn';
+import {Route} from 'react-router-dom';
+
+import NavagationBar from './components/nav/NavagationBar';
 import SignUp from './components/auth/SignUp';
+import LogIn from './components/auth/LogIn'
 
 function App() {
   return (
     <div className="App">
-      App.jsx lives here
-      <Nav />
-      <LandingPage />
-      <LogIn />
-      <SignUp />
+      <NavagationBar />
+
+      <Route path ='/SignUp' component={SignUp} />
+      <Route path ='/LogIn' component={LogIn} />
+
     </div>
   );
 }

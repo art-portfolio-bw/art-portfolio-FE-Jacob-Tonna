@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-class NavagationBar extends Component {
-
-	render() { 
-		return (
-			<div className="navagation-bar-wrapper">
-				navagation bar lives here
-			</div>
-		);
-	}
+function NavagationBar (){
+	return(
+		<div className="navagationbar-container">
+		NavagationBar lives here
+		<Link to='/SignUp' className='navlink'> sign up </Link> {' '}
+		<Link to='/LogIn' className='navlink'> log in </Link> {' '}
+		</div>
+		)
 }
- 
+
 export default NavagationBar;
