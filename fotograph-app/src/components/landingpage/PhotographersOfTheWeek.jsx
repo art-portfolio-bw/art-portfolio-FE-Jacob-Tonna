@@ -25,10 +25,10 @@ class PhotographersOfTheWeek extends Component {
 		const POTWData = this.state.PhotographersOTW;
 		console.log( POTWData.slice(0, 1) )
 		return (
-			<div className="popular-collage-wrapper">
+			<div className="popular-collage-container">
 				<h1> Photographer's of the Week </h1>
 				<h3> Top Collection </h3>
-				<div className="popular-posts-wrapper">
+				<div className="popular-posts-container">
 					<div className="popular-posts">
 				{
 					POTWData.slice(52,55).map( data => (
