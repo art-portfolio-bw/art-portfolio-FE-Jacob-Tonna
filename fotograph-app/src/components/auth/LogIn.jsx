@@ -51,6 +51,9 @@ class LogIn extends Component {
 							<h4>remember me checkbox </h4>
 							<a href="#ef"> Forgot Password? </a>
 						</div>
+						<div className="error-container">
+						{this.props.error && (<p className='error-message'>{this.props.error}</p>)}
+						</div>
 					</form>
 				</div>
 				<div className="form-image">
