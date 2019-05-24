@@ -41,7 +41,7 @@ const reducer = (state = initialState, action) =>{
 					LoggingIn: false,
 					loggedIn: true,
 					loginError: '',
-					// action payload here
+					user: action.payload,
 				}
 
 		case LOGIN_FAILURE:
@@ -73,7 +73,7 @@ const reducer = (state = initialState, action) =>{
 				Registering: false,
 				Registered: true,
 				RegistrationError: '',
-				// action payload here
+				user: action.payload,
 			}
 		
 		case REGISTER_FAILURE:
