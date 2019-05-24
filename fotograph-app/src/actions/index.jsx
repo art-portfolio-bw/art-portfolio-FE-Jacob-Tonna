@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { axiosWithAuth } from '../components/auth/axiosWithAuth';
+import { axiosWithAuth } from '../components/auth/axiosWithAuth';
 
 const URL = 'https://artportfoliobw.herokuapp.com';
 // .post(`${URL}/SomeLinkHere`, somethingProbablyCreds)
@@ -82,5 +82,14 @@ export const getUsersPosts = () => dispatch =>{
 	dispatch({
 		type: GET_USERS_POSTS_START
 	})
-	
+	axiosWithAuth()
+		.get(`${URL}`)
+		.then( res => {
+			dispatch({ 
+				type: GET_USERS_POSTS_SUCCESS
+			})
+		})
+		.catch(err => {
+			console.log(err)
+		})
 }
