@@ -23,6 +23,7 @@ export const login = creds => dispatch => {
 				type: LOGIN_SUCCESS,
 				payload: res.data,
 			})
+			localStorage.setItem('user', res.data.artistId)
 		})
 		.catch(err => {
 			console.log(err)

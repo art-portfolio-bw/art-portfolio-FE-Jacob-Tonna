@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import Link from 'react-router-dom';
+import login from '../../actions/index';
 
 import formImage from '../../assets/login.jfif';
 
@@ -62,4 +65,4 @@ const mapStateToProps = state => ({
 	error: state.loginError,
 })
 
-export default connect(mapStateToProps, { logIn })(LogIn);
+export default connect(mapStateToProps, { login })(LogIn);
