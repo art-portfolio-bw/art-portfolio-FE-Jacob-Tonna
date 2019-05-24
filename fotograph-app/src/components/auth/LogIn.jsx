@@ -28,7 +28,7 @@ class LogIn extends Component {
 	login = e => {
 		e.preventDefault();
 		this.props.login(this.state.userInfo).then(()=> {
-			this.props.history.push('/user')
+			this.props.history.push('/UserHome')
 		})
 		}
 
@@ -50,6 +50,9 @@ class LogIn extends Component {
 						<div className="form-bottom">
 							<h4>remember me checkbox </h4>
 							<a href="#ef"> Forgot Password? </a>
+						</div>
+						<div className="error-container">
+						{this.props.error && (<p className='error-message'>{this.props.error}</p>)}
 						</div>
 					</form>
 				</div>
