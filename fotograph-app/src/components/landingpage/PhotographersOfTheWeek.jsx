@@ -10,7 +10,6 @@ class PhotographersOfTheWeek extends Component {
 	  }
 
 	componentDidMount() {
-		console.log('popular posts mounted')
 		axios
 			.get('https://artportfoliobw.herokuapp.com/')
 			.then(res => {
@@ -23,7 +22,6 @@ class PhotographersOfTheWeek extends Component {
 
 	render() {
 		const POTWData = this.state.PhotographersOTW;
-		console.log( POTWData.slice(0, 1) )
 		return (
 			<div className="popular-collage-container">
 				<h1> Photographer's of the Week </h1>

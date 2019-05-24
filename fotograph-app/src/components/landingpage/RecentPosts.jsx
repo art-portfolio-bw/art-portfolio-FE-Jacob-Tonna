@@ -10,7 +10,6 @@ class PopularPosts extends Component {
 	  }
 
 	componentDidMount() {
-		console.log('recent posts')
 		axios
 			.get('https://artportfoliobw.herokuapp.com/')
 			.then(res => {
