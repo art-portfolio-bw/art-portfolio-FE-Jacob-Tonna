@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import signUpImage from '../../assets/login.jfif'
 
+import {register} from '../../actions';
 
 class SignUp extends Component {
 	constructor(){
@@ -44,21 +47,21 @@ class SignUp extends Component {
 						<div className="form-row">
 							<div className="form-column">
 								<p>First Name</p>
-								<input type="text"/>
+								<input type="text" placeholder='rick' />
 							</div>
 							<div className="form-column">
 								<p>Last Name</p>
-								<input type="text"/>
+								<input type="text" placeholder='sanchez' />
 							</div>
 						</div>
 						<p>E-Mail</p>
-						<input type="text"/>
+						<input type="text" placeholder='rick-sanchez@c137.uni' />
 						<p>Password</p>
-						<input type="password"/>
+						<input type="password" placeholder='wabalabadubdub'/>
 						<p>Confirm Password</p>
-						<input type="password"/>
+						<input type="password" placeholder='wabalabadubdub' />
 						<div className="form-buttons">
-							<button>LOG IN</button>
+							<button> <Link to='/LogIn'> LOG IN </Link></button>
 							<button>SIGN UP</button>
 						</div>
 					</form>
