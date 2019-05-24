@@ -47,20 +47,20 @@ class SignUp extends Component {
 						<div className="form-row">
 							<div className="form-column">
 								<p>First Name</p>
-								<input type="text" placeholder='rick' onChange={this.changeHandler} value={this.fname} required/>
+								<input type="text" placeholder='rick' onChange={this.changeHandler} value={this.state.userInfo.fname} required/>
 							</div>
 							<div className="form-column">
 								<p>Last Name</p>
-								<input type="text" placeholder='sanchez' onChange={this.changeHandler} value={this.lname} required/>
+								<input type="text" placeholder='sanchez' onChange={this.changeHandler} value={this.state.userInfo.lname} required/>
 							</div>
 						</div>
 						<p>E-Mail</p>
-						<input type="text" placeholder='rick-sanchez@c137.uni' onChange={this.changeHandler} value={this.email} required/>
+						<input type="text" placeholder='rick-sanchez@c137.uni' onChange={this.changeHandler} value={this.state.userInfo.email} required/>
 						<p>Password</p>
-						<input type="password" placeholder='wabalabadubdub' onChange={this.password} required/>
+						<input type="password" placeholder='wabalabadubdub' onChange={this.changeHandler} value={this.state.userInfo.password} required/>
 						<div className="form-buttons">
 							<button> <Link to='/LogIn'> LOG IN </Link></button>
-							<button>SIGN UP</button>
+							<button onClick={this.registration}>SIGN UP</button>
 						</div>
 					</form>
 				</div>
