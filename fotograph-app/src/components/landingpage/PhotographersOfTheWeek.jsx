@@ -31,6 +31,7 @@ class PhotographersOfTheWeek extends Component {
 						<div className="image">
 							{POTWData.reverse().slice(28, 31).map( data => ( <img src={data.src} alt={data.alt} key={data.photoId} /> )) }
 						</div>
+						
 					</div>
 				</div>
 
