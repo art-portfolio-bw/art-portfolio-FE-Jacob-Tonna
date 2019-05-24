@@ -20,7 +20,7 @@ function App() {
             <Route path ='/SignUp' component={SignUp} />
             <Route path ='/LogIn' component={LogIn} />
             {/* <Route path='/new-post' component={CreateNewPost} /> */}
-            <PrivateRoute path ='/user' component={UserHome} />
+            <PrivateRoute path ='/UserHome' component={UserHome} />
         </div>
       </div>
     </Router>
