@@ -6,6 +6,8 @@ import {
 	REGISTER_START,
 	REGISTER_SUCCESS,
 	REGISTER_FAILURE,
+	GET_USERS_POSTS_START,
+	GET_USERS_POSTS_SUCCESS,
 } from '../actions'
 
 const initialState = {
@@ -19,10 +21,14 @@ const initialState = {
 	Registered: false,
 	RegistrationError: '',
 
+	// user data stuff
+	getUsersPosts: false,
+
 	// important stuff
 	user: {},
 
 	// stretch stuff
+
 };
 
 // reducer
@@ -83,6 +89,27 @@ const reducer = (state = initialState, action) =>{
 			return{
 				...state,
 				RegistrationError: '',
+			}
+
+		// user post stuff
+
+		case GET_USERS_POSTS_START:
+			return{
+				...state,
+					getUsersPosts: true,
+					error: '',
+					user: state.user,
+					loggedIn: true,
+			}
+		
+		case GET_USERS_POSTS_SUCCESS:
+			return{
+				...state,
+				getUsersPosts: false,
+				error: '',
+				user: state.user,
+				loggedIn: true,
+
 			}
 
 		default:
