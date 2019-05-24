@@ -28,7 +28,7 @@ class LogIn extends Component {
 	login = e => {
 		e.preventDefault();
 		this.props.login(this.state.userInfo).then(()=> {
-			this.props.history.push('/user')
+			this.props.history.push('/UserHome')
 		})
 		}
 
