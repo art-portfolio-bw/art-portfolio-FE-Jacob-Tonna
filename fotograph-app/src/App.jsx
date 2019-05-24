@@ -6,8 +6,8 @@ import LandingPage from './components/landingpage/LandingPage';
 import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn'
 
-// import PrivateRoute from './components/auth/private/PrivateRoute';
-// import UserHome from './components/Users/UserHome';
+import PrivateRoute from './components/auth/private/PrivateRoute';
+import UserHome from './components/Users/UserHome.jsx';
 // import CreateNewPost from './components/Users/CreateNewPost';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route path ='/SignUp' component={SignUp} />
             <Route path ='/LogIn' component={LogIn} />
             {/* <Route path='/new-post' component={CreateNewPost} /> */}
-            {/* <PrivateRoute path ='/user' component={UserHome} */}
+            <PrivateRoute path ='/user' component={UserHome} />
         </div>
       </div>
     </Router>

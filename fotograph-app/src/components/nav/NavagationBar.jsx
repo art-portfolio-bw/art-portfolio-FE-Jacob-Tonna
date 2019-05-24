@@ -7,13 +7,21 @@ import {logout} from '../../actions/index';
 import logo from '../../assets/LOGO.svg'
 
 function NavagationBar (props){
-	console.log('navbar.jsx says:', props)
 
 	return(
 		<div className="navagationbar-container">
 		<Link to='/' className='navlink'> <img src={logo} alt="fotograph company logo"/> </Link>{' '}
-		<Link to='/SignUp' className='navlink'> sign up </Link> {' '}
-		<Link to='/LogIn' className='navlink'> log in </Link> {' '}
+
+		{props.loggedIn && <NavLink className='navlink' to='/user'> My Posts </NavLink>}
+
+		<div>
+			{props.loggedIn ? (
+			<Link className='navlink' to='/' onClick={props.logout}> Log Out </Link>
+			) : (
+			<Link className='navlink' to='/login'>Login or Sign UP</Link>
+			)
+			}
+		</div>
 		</div>
 		)
 }
