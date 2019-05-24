@@ -63,7 +63,14 @@ export const register = creds => dispatch => {
 				type: REGISTER_SUCCESS,
 				payload: res.data,
 			})
-		});
+			localStorage.setItem('user', res.data.artistId)
+		})
+		.catch(err => {
+			console.log('registration error?', err)
+			dispatch({
+				type: REGISTER_FAILURE,
+			})
+		})
 }
 
 // personal stretch 
