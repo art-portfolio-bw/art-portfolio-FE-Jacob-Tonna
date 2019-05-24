@@ -74,6 +74,13 @@ export const register = creds => dispatch => {
 
 // personal stretch 
 
-// export const GET_USERS_POSTS_START = 'GET_USERS_POSTS_START';
-// export const GET_USERS_POSTS_SUCCESS = 'GET_USERS_POSTS_SUCCESS';
-// export const GET_USERS_POSTS_FAILURE = 'GET_USERS_POSTS_FAILURE';
+export const GET_USERS_POSTS_START = 'GET_USERS_POSTS_START';
+export const GET_USERS_POSTS_SUCCESS = 'GET_USERS_POSTS_SUCCESS';
+export const GET_USERS_POSTS_FAILURE = 'GET_USERS_POSTS_FAILURE';
+
+export const getUsersPosts = () => dispatch =>{
+	dispatch({
+		type: GET_USERS_POSTS_START
+	})
+	
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CreateNewPost from './CreateNewPost';
 // import {connect} from 'react-redux';
 // import {withRouter} from 'react-router-dom';
 // import axios from 'axios';
@@ -11,6 +12,7 @@ class UserHome extends Component {
 		return (
 			<div className="user-home">
 				user home lives here
+				<CreateNewPost />
 			</div>
 		);
 	}

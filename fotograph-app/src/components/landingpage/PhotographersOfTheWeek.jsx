@@ -30,11 +30,9 @@ class PhotographersOfTheWeek extends Component {
 				<h3> Top Collection </h3>
 				<div className="popular-posts-container">
 					<div className="popular-posts">
-				{
-					POTWData.reverse().slice(28, 31).map( data => (
-							<img src={data.src} alt={data.alt} key={data.photoId} />
-							))
-				}
+						<div className="image">
+							{POTWData.reverse().slice(28, 31).map( data => ( <img src={data.src} alt={data.alt} key={data.photoId} /> )) }
+						</div>
 					</div>
 				</div>
 
