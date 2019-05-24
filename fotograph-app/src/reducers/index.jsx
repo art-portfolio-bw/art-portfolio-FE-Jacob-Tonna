@@ -49,7 +49,36 @@ const reducer = (state = initialState, action) =>{
 				loggedIn: false,
 			}
 		
+		// log out
+
+		case LOGOUT:
+			return {
+				...state,
+				loggedIn: false,
+			}
+
 		// registration stuff
+
+		case REGISTER_START:
+			return{
+				...state,
+				Registering: true,
+				RegistrationError: '',
+			}
+
+		case REGISTER_SUCCESS:
+			return{
+				...state,
+				Registering: false,
+				Registered: true,
+				RegistrationError: '',
+				// action payload here
+			}
 		
+		case REGISTER_FAILURE:
+			return{
+				...state,
+				RegistrationError: '',
+			}
 	}
 }
