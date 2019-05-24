@@ -17,7 +17,7 @@ export const login = creds => dispatch => {
 	return axios
 		.post(`${URL}/login`, creds)
 		.then(res =>{
-			localStorage.setItem('token', res.data.token);
+			localStorage.setItem(token, res.data.token);
 			dispatch({
 				type: LOGIN_SUCCESS,
 				payload: res.data,
@@ -57,7 +57,7 @@ export const register = creds => dispatch => {
 	return axios
 		.post(`${URL}/signup`, creds)
 		.then(res => {
-			localStorage.setItem('token', res.data.token);
+			localStorage.setItem(token, res.data.token);
 			dispatch({
 				type: REGISTER_SUCCESS,
 				payload: res.data,
