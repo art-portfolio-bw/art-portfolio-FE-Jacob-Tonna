@@ -15,7 +15,7 @@ export const login = creds => dispatch => {
 		type: LOGIN_START,
 	});
 	return axios
-		.post(`${URL}/login`, creds)
+		.post(`${URL}/LogIn`, creds)
 		.then(res =>{
 			localStorage.setItem('token', res.data.token);
 			dispatch({
@@ -55,7 +55,7 @@ export const register = creds => dispatch => {
 		type: REGISTER_START
 	});
 	return axios
-		.post(`${URL}/signup`, creds)
+		.post(`${URL}/SignUp`, creds)
 		.then(res => {
 			localStorage.setItem('token', res.data.token);
 			dispatch({
@@ -74,6 +74,6 @@ export const register = creds => dispatch => {
 
 // personal stretch 
 
-export const GET_USERS_POSTS_START = 'GET_USERS_POSTS_START';
-export const GET_USERS_POSTS_SUCCESS = 'GET_USERS_POSTS_SUCCESS';
-export const GET_USERS_POSTS_FAILURE = 'GET_USERS_POSTS_FAILURE';
+// export const GET_USERS_POSTS_START = 'GET_USERS_POSTS_START';
+// export const GET_USERS_POSTS_SUCCESS = 'GET_USERS_POSTS_SUCCESS';
+// export const GET_USERS_POSTS_FAILURE = 'GET_USERS_POSTS_FAILURE';

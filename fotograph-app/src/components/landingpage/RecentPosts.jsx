@@ -29,7 +29,7 @@ class PopularPosts extends Component {
 				<div className="recent-posts-wrapper">
 					<div className="recent-posts">
 				{
-					recentPostsData.slice(40, 46).map( data => (
+					recentPostsData.reverse().slice(30, 36).map( data => (
 							<img src={data.src} alt={data.alt} key={data.photoId} />
 							))
 				}

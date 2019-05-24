@@ -31,7 +31,7 @@ class PhotographersOfTheWeek extends Component {
 				<div className="popular-posts-container">
 					<div className="popular-posts">
 				{
-					POTWData.map( data => (
+					POTWData.reverse().slice(28, 31).map( data => (
 							<img src={data.src} alt={data.alt} key={data.photoId} />
 							))
 				}
