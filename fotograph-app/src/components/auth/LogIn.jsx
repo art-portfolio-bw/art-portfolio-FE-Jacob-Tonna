@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Link from 'react-router-dom';
-import login from '../../actions/index';
+import {Link} from 'react-router-dom';
+import {login} from '../../actions/index';
 
 import formImage from '../../assets/login.jfif';
 
@@ -39,12 +39,12 @@ class LogIn extends Component {
 					<h1> Login </h1>
 					<form className='login-form' onSubmit={this.login}>
 						<p>Email</p>
-						<input type="email" name='email' placeholder='BestPhotographerEver' onChange={this.changeHandler} value={this.state.userInfo.email} />
+						<input type="email" name='email' placeholder='BestPhotographerEver' onChange={this.changeHandler} value={this.state.userInfo.email} required/>
 						<p>Password</p>
-						<input type="password" name='password' placeholder='bugMeNot' onChange={this.changeHandler} value={this.state.userInfo.password} />
+						<input type="password" name='password' placeholder='bugMeNot' onChange={this.changeHandler} value={this.state.userInfo.password} required/>
 						<div className="form-buttons">
 							<button> SIGN UP </button>
-							<button> LOGIN </button>
+							<button onClick={this.login}> LOGIN </button>
 						</div>
 						<div className="form-bottom">
 							<h4>remember me checkbox </h4>
