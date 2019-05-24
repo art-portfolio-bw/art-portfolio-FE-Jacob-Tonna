@@ -9,6 +9,10 @@ class UserHome extends Component {
 	state = {
 		user: []
 	}
+	componentDidMount() {
+		axios
+			.get(``)
+	}
 	render() { 
 		return (
 			<div className="user-home">

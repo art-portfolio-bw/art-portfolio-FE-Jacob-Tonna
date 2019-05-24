@@ -4,7 +4,23 @@ import signUpImage from '../../assets/login.jfif'
 
 
 class SignUp extends Component {
-	
+	constructor(){
+		super()
+		this.state = {
+			userInfo:{
+				fname: '',
+				lnama: '',
+				email: '',
+				password: '',
+			}
+		}
+	}
+
+	handleChange = e => {
+		this.setState
+	}
+
+
 	render() { 
 		return (
 			<div className="form-wrapper">
