@@ -12,7 +12,7 @@ function NavagationBar (props){
 		<div className="navagationbar-container">
 		<Link to='/' className='navlink'> <img src={logo} alt="fotograph company logo"/> </Link>{' '}
 
-		{props.loggedIn && <NavLink className='navlink' to='/user'> My Posts </NavLink>}
+		{props.loggedIn && <NavLink className='navlink' to='/UserHome'> My Posts </NavLink>}
 
 		<div>
 			{props.loggedIn ? (

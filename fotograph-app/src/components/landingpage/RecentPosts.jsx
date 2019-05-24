@@ -10,7 +10,6 @@ class PopularPosts extends Component {
 	  }
 
 	componentDidMount() {
-		console.log('recent posts')
 		axios
 			.get('https://artportfoliobw.herokuapp.com/')
 			.then(res => {
@@ -29,7 +28,7 @@ class PopularPosts extends Component {
 				<div className="recent-posts-wrapper">
 					<div className="recent-posts">
 				{
-					recentPostsData.slice(40, 46).map( data => (
+					recentPostsData.reverse().slice(30, 36).map( data => (
 							<img src={data.src} alt={data.alt} key={data.photoId} />
 							))
 				}
