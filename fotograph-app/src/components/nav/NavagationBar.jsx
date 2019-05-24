@@ -1,14 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
+import {logout} from '../../actions/index';
 
-function NavagationBar (){
+import logo from '../../assets/LOGO.svg'
+
+function NavagationBar (props){
+
 	return(
 		<div className="navagationbar-container">
-		<Link to='/' className='navlink'> Logo </Link>{' '}
-		<Link to='/SignUp' className='navlink'> sign up </Link> {' '}
-		<Link to='/LogIn' className='navlink'> log in </Link> {' '}
+		<Link to='/' className='navlink'> <img src={logo} alt="fotograph company logo"/> </Link>{' '}
+
+		{props.loggedIn && <NavLink className='navlink' to='/user'> My Posts </NavLink>}
+
+		<div>
+			{props.loggedIn ? (
+			<Link className='navlink' to='/' onClick={props.logout}> Log Out </Link>
+			) : (
+			<Link className='navlink' to='/login'>Login or Sign UP</Link>
+			)
+			}
+		</div>
 		</div>
 		)
 }
 
-export default NavagationBar;
+
+const mapStateToProps = state => ({
+	loggedIn: state.loggedIn,
+})
+
+export default withRouter(connect(mapStateToProps, {logout})(NavagationBar));
