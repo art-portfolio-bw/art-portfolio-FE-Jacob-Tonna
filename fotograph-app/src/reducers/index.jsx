@@ -10,7 +10,7 @@ import {
 
 const initialState = {
 	//LogIn Stuff
-	LoggingIn: false,
+	loggingIn: false,
 	loggedIn: false,
 	loginError: '',
 
@@ -18,6 +18,9 @@ const initialState = {
 	Registering: false,
 	Registered: false,
 	RegistrationError: '',
+
+	// important stuff
+	user: {},
 
 	// stretch stuff
 };
@@ -32,13 +35,13 @@ const reducer = (state = initialState, action) =>{
 		case LOGIN_START:
 			return{
 				...state,
-				LoggingIn: false,
+				loggingIn: false,
 				loginError: '',
 			}
 		case LOGIN_SUCCESS:
 				return{
 					...state,
-					LoggingIn: false,
+					loggingIn: false,
 					loggedIn: true,
 					loginError: '',
 					user: action.payload,
@@ -81,6 +84,9 @@ const reducer = (state = initialState, action) =>{
 				...state,
 				RegistrationError: '',
 			}
+
+		default:
+			return state;
 	}
 }
 
