@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+
 import {login} from '../../actions/index';
 
 import formImage from '../../assets/login.jfif';
@@ -18,7 +19,7 @@ class LogIn extends Component {
 		this.setState({
 			userInfo :{
 				// spread operator below
-				...this.setState.userInfo,
+				...this.state.userInfo,
 				[e.target.name] : e.target.value
 			}
 		})
@@ -43,7 +44,7 @@ class LogIn extends Component {
 						<p>Password</p>
 						<input type="password" name='password' placeholder='bugMeNot' onChange={this.changeHandler} value={this.state.userInfo.password} required/>
 						<div className="form-buttons">
-							<button> SIGN UP </button>
+							<button><Link to='/sign-up'>SIGN UP</Link></button>
 							<button onClick={this.login}> LOGIN </button>
 						</div>
 						<div className="form-bottom">

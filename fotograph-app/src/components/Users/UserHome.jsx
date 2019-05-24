@@ -10,7 +10,11 @@ class UserHome extends Component {
 		user: []
 	}
 	render() { 
-		return (  );
+		return (
+			<div className="user-home">
+				user home lives here
+			</div>
+		);
 	}
 }
  
