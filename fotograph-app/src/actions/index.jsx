@@ -32,6 +32,18 @@ export const login = creds => dispatch => {
 		})
 }
 
+// log out
+
+export const LOGOUT = 'LOGOUT';
+
+export const logout = () => dispatch =>{
+	localStorage.clear();
+	dispatch({
+		type: LOGOUT,
+	})
+
+}
+
 // registration 
 
 export const REGISTER_START = 'REGISTER_START';
