@@ -44,7 +44,7 @@ class LogIn extends Component {
 						<p>Password</p>
 						<input type="password" name='password' placeholder='bugMeNot' onChange={this.changeHandler} value={this.state.userInfo.password} required/>
 						<div className="form-buttons">
-							<button><Link to='/sign-up'>SIGN UP</Link></button>
+							<button><Link to='/SignUp'>SIGN UP</Link></button>
 							<button onClick={this.login}> LOGIN </button>
 						</div>
 						<div className="form-bottom">

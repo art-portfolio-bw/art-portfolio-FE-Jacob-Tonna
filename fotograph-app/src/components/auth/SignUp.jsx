@@ -16,10 +16,23 @@ class SignUp extends Component {
 		}
 	}
 
-	handleChange = e => {
-		this.setState
+	changeHandler = e => {
+		this.setState({
+			userInfo:{
+				// spread operator
+				...this.state.userInfo,
+				[e.target.name]: e.target.value,
+			}
+		})
 	}
 
+	registration = e =>{
+		e.preventDefault();
+		this.props.registration(this.state.userInfo)
+		.then(() => {
+			this.props.history.push('/user');
+		})
+	}
 
 	render() { 
 		return (
@@ -27,7 +40,7 @@ class SignUp extends Component {
 				<div className="form-contianer">
 					<h3>Create your own photo experience</h3>
 					<h1>Create an account</h1>
-					<form>
+					<form onSubmit={this.registration}>
 						<div className="form-row">
 							<div className="form-column">
 								<p>First Name</p>
@@ -45,6 +58,7 @@ class SignUp extends Component {
 						<p>Confirm Password</p>
 						<input type="password"/>
 						<div className="form-buttons">
+							<button>LOG IN</button>
 							<button>SIGN UP</button>
 						</div>
 					</form>
