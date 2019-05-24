@@ -29,9 +29,9 @@ class SignUp extends Component {
 		})
 	}
 
-	registration = e =>{
+	register = e => {
 		e.preventDefault();
-		this.props.registration(this.state.userInfo)
+		this.props.register(this.state.userInfo)
 		.then(() => {
 			this.props.history.push('/user');
 		})
@@ -43,7 +43,7 @@ class SignUp extends Component {
 				<div className="form-contianer">
 					<h3>Create your own photo experience</h3>
 					<h1>Create an account</h1>
-					<form onSubmit={this.registration}>
+					<form onSubmit={this.register}>
 						<div className="form-row">
 							<div className="form-column">
 								<p>First Name</p>
@@ -60,7 +60,7 @@ class SignUp extends Component {
 						<input type="password" name='password' placeholder='wabalabadubdub' onChange={this.changeHandler} value={this.state.userInfo.password} required/>
 						<div className="form-buttons">
 							<button> <Link to='/LogIn'> LOG IN </Link></button>
-							<button onClick={this.registration}>SIGN UP</button>
+							<button>SIGN UP</button>
 						</div>
 					</form>
 				</div>
@@ -72,4 +72,8 @@ class SignUp extends Component {
 	}
 }
  
-export default SignUp;
+const mapStateToProps = state => ({
+	register: state.register
+})
+
+export default connect(mapStateToProps, {register})(SignUp);
